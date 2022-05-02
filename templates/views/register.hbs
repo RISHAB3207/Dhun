@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+    <title>Registration</title> 
+ </head>
+ <body>
+      {{>navbar}}
+
+    <div class="display-3 d-flex justify-content-center mb-5 mt-4">DHUN-BAJAO-NA</div>
+    <div class="container  text-align-center">
+        
+        <form class="form" action="/register" method="post" >
+            <div class="mb-3">
+              <label class="form-label">Firstname</label>
+              <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="firstname" name="firstname">
+            </div>
+            <div class="mb-3">
+
+              <label  class="form-label">lastname</label>
+              <input type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="lastname" name="lastname">
+            </div>
+             <div class="mb-3">
+              <label  class="form-label">Email</label>
+              <input type="email" class="form-control" id="exampleDropdownFormPassword2" placeholder="Email" name="email">
+            </div>
+             <div class="mb-3">
+              <label  class="form-label">phone</label>
+              <input type="tel" class="form-control" id="exampleDropdownFormPassword2" placeholder="phone" name="phone">
+            </div>
+            <div class="mb-3">
+              <label  class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name="password">
+            </div>
+             <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Confirm Password" name="confirmpassword">
+            </div>
+           
+           
+           
+
+            <button type="submit" class="btn btn-primary " name="register">register</button>
+          </form>
+
+        
+        </div>
+        <div class="footer">
+            <p > &copy;Copyright by Rishab Chaudhary</p>  
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+</body>
+</html>

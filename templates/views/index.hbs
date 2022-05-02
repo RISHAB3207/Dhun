@@ -1,0 +1,200 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>header}}
+    
+</head>
+
+<body>
+    {{>navbar}}
+
+    {{!-- <nav>
+
+        <ul>
+            <li class="logo"><img src="logo.png" alt="logo pic">Dhun</li>
+            <li>Home
+            <li>About
+            <li><a style="color:aliceblue; text-decoration:none; " href="register">Register</a>  
+            <li><a style="color:aliceblue; text-decoration:none; " href="login">Login</a> 
+
+
+
+
+
+        </ul>
+          
+    </nav>
+ --}}
+
+    <div class="container">
+        <div class="music-list">
+            <h1>BOB-Best Of Best Song Collection </h1>
+            <div class="list-container">
+                <div class="list-item">
+                    <img src="covers/1.jpg" alt="0">
+                    <span>Aur Pyaar Karna Hai</span>
+                    <i id="0" class="far songItemPlay fa-play-circle fa-2x " ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/2.jpg" alt="0">
+                    <span>bepanah Ishq</span>
+                    <i id=" 1" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+                            
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/3.jpg" alt="0">
+                    <span>Chura Liya</span>
+                    <i id=" 2" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/4.jpg" alt="0">
+                    <span>Is Qadar</span>
+                    <i id=" 3" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/5.jpg" alt="0">
+                    <span>OH SANAM</span>
+                    <i id=" 4" class="far songItemPlay fa-2x  fa-play-circle " ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/6.jpg" alt="0">
+                    <span>
+                        Pal Pal Dil Ke Paas</span>
+                    <i id=" 5" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/7.jpg" alt="0">
+                    <span>Suna Hai</span>   
+                    <i     id=" 6" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>        
+
+                <div class="list-item">
+                    <img src="covers/8.jpg" alt="0">
+                    <span>Thoda thoda pyaar</span>   
+                    <i     id=" 7" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>        
+
+
+                <div class="list-item">
+                    <img src="covers/9.jpg" alt="0">
+                    <span>Tumse Bhi Zyada</span>   
+                    <i     id=" 8" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>        
+
+
+            </div> 
+
+        </div>
+        <div class="bannner"></div>
+
+
+    </div>
+    <div class="bottom">
+        <input name="range" type="range" id="progressbar" value="0" min="0" max="100">
+
+        <div class="icons">
+            <i class="fas fa-2x fa-backward" id="prev"></i>
+            <i class="far fa-2x fa-play-circle" id="masterplay"></i>
+            <i class="fas fa-2x fa-forward" id="next"></i>
+        </div>
+        <div class="playlist">
+            <span class="gifImage" id="gif"><img src="playing.gif" width="60px" height="30px"></span><span style="font-size: large; margin-top: 10px;"><span id="songname">Aur Pyar Karna Hai</span></span>
+        </div>
+
+
+
+
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/dca0107610.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html> 
+
+
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link  rel="stylesheet" href="css/style.css">
+    <title>Login</title>
+</head>
+<body>
+      {{>navbar}}
+
+    <div class="display-3 d-flex justify-content-center mb-5 mt-4">COVID-2K19</div>
+    <div class="container  text-align-center">
+        
+        <form class="form" >
+            <div class="mb-3">
+              <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                <label class="form-check-label" for="dropdownCheck2">
+                  Remember me
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary ">Sign in</button>
+                        <button type="submit" class="btn btn-primary " name="register"><a href="register">register</a> </button>
+
+          </form>
+
+        
+        </div>
+        <div class="footer">
+            <p > &copy;Copyright by Rishab Chaudhary</p>  
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+</body>
+</html> --}}

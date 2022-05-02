@@ -1,0 +1,602 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHUN-BAJAO NAA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><img src="logo.png" alt="logo pic">Dhun</li>
+            <li>Home
+            <li>About
+
+
+
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <div class="music-list">
+            <h1>BOB-Best Of Best Song Collection </h1>
+            <div class="list-container">
+                <div class="list-item">
+                    <img src="covers/poster.jpg" alt="0">
+                    <span>Aur Pyaar Karna Hai</span>
+                    <i id=" 0" class="far songItemPlay fa-play-circle fa-2x " ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/2.jpg" alt="0">
+                    <span>bepanah Ishq</span>
+                    <i id=" 1" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+                            
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/3.jpg" alt="0">
+                    <span>Chura Liya</span>
+                    <i id=" 2" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/4.jpg" alt="0">
+                    <span>Is Qadar</span>
+                    <i id=" 3" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/5.jpg" alt="0">
+                    <span>OH SANAM</span>
+                    <i id=" 4" class="far songItemPlay fa-2x  fa-play-circle " ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/6.jpg" alt="0">
+                    <span>
+                        Pal Pal Dil Ke Paas</span>
+                    <i id=" 5" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="covers/7.jpg" alt="0">
+                    <span>Suna Hai</span>   
+                    <i     id=" 6" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>        
+
+                <div class="list-item">
+                    <img src="covers/7.jpg" alt="0">
+                    <span>Thoda thoda pyaar</span>   
+                    <i     id=" 7" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>        
+
+
+                <div class="list-item">
+                    <img src="covers/7.jpg" alt="0">
+                    <span>Tumse Bhi Zyada</span>   
+                    <i     id=" 8" class="far songItemPlay fa-2x  fa-play-circle" ></i>
+
+
+
+                </div>        
+
+
+            </div> 
+
+        </div>
+        <div class="bannner"></div>
+
+
+    </div>
+    <div class="bottom">
+        <input name="range" type="range" id="progressbar" value="0" min="0" max="100">
+
+        <div class="icons">
+            <i class="fas fa-2x fa-backward" id="prev"></i>
+            <i class="far fa-2x fa-play-circle" id="masterplay"></i>
+            <i class="fas fa-2x fa-forward" id="next"></i>
+        </div>
+        <div class="playlist">
+            <span class="gifImage" id="gif"><img src="playing.gif" width="60px" height="30px"></span><span style="font-size: large; margin-top: 10px;"><span id="songname">Aur Pyar Karna Hai</span></span>
+        </div>
+
+
+
+
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/dca0107610.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let audioElement=new Audio('Aur Pyaar Karna Hai.mp3');
+let songIndex=0;
+let masterplay=document.getElementById("masterplay");
+let progressbar=document.getElementById("progressbar");
+let gif=document.getElementById('gif');
+let songname=document.getElementById('songname');
+let songs=[
+    
+    {
+        songName:"Aur Pyaar Karna Hai",filepath:"song/Aur Pyaar Karna Hai.mp3",coverpath:"cover/1.jpg"
+    },
+    {
+        songName:"bepanah Ishq",filepath:"song/bepanah Ishq.mp3",coverpath:"cover/1.jpg"
+    },
+    {
+        songName:"Chura Liya",filepath:"song/Chura Liya.mp3",coverpath:"cover/1.jpg"
+    },
+    {
+        songName:"Is Qadar",filepath:"song/Is Qadar.mp3",coverpath:"cover/1.jpg"
+    },
+    {
+        songName:"OH SANAM",filepath:"song/OH SANAM.mp3",coverpath:"cover/1.jpg"
+    },
+    {
+        songName:" Pal Pal Dil Ke Paas",filepath:"song/Pal Pal Dil Ke Paas.mp3",coverpath:"cover/1.jpg"
+    },
+    {
+        songName:"Suna Hai",filepath:"song/Suna Hai.mp3",coverpath:"cover/1.jpg"
+    },
+    {
+        songName:"Thoda thoda pyaar",filepath:"song/Thoda thoda pyaar.mp3",coverpath:"cover/1.jpg"
+    },
+    {
+        songName:"Tumse Bhi Zyada",filepath:"song/Tumse Bhi Zyada.mp3",coverpath:"cover/1.jpg"
+    },
+
+
+]
+
+masterplay.addEventListener('click',()=>{
+    if(audioElement.paused||audioElement.currentTime<=0){
+        audioElement.play();
+        masterplay.classList.remove('fa-play-circle');
+        masterplay.classList.add('fa-pause-circle');
+        gif.style.opacity=1;
+
+
+
+    }
+    else{
+        audioElement.pause();
+        masterplay.classList.remove('fa-pause-circle');
+        masterplay.classList.add('fa-play-circle');
+
+        Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+            element.classList.remove('fa-pause-circle');
+            element.classList.add('fa-play-circle');
+        })
+
+
+        gif.style.opacity=0;
+
+    }
+})
+
+audioElement.addEventListener('timeupdate',()=>{
+
+    progress=parseInt((audioElement.currentTime/audioElement.duration)*100);
+    progressbar.value=progress;
+    // console.log(progress);
+
+})
+
+progressbar.addEventListener('change',()=>{
+
+    audioElement.currentTime=progressbar.value*audioElement.duration/100;
+
+
+})
+
+
+
+const makeAllPlays = ()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-pause-circle');
+        element.classList.add('fa-play-circle');
+    })
+}
+
+
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    element.addEventListener('click', (e)=>{ 
+        makeAllPlays();
+        songIndex=parseInt(e.target.id);
+        e.target.classList.remove('fa-play-circle');
+        e.target.classList.add('fa-pause-circle');
+        masterplay.classList.remove('fa-play-circle');
+        masterplay.classList.add('fa-pause-circle');
+        songname.innerText = songs[songIndex].songName;
+
+        
+        audioElement.src= `song/${songIndex+1}.mp3`;
+        gif.style.opacity = 1;
+        audioElement.currentTime=0;
+        
+        audioElement.play();
+
+    })
+})
+
+
+
+document.getElementById('next').addEventListener('click', ()=>{
+    if(songIndex>=9){
+        songIndex = 0
+    }
+    else{
+        songIndex += 1;
+    }
+    audioElement.src = `song/${songIndex+1}.mp3`;
+    songname.innerText = songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterplay.classList.remove('fa-play-circle');
+    masterplay.classList.add('fa-pause-circle');
+
+})
+
+document.getElementById('prev').addEventListener('click', ()=>{
+    if(songIndex<=0){
+        songIndex = 0
+    }
+    else{
+        songIndex -= 1;
+    }
+    audioElement.src = `song/${songIndex+1}.mp3`;
+    songname.innerText = songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterplay.classList.remove('fa-play-circle');
+    masterplay.classList.add('fa-pause-circle');
+
+}) -->
+
+
+
+<!-- css -->
+
+body{
+    /* font-size: 2.2rem; */
+    /* background-image: url("https://cdn2.vectorstock.com/i/1000x1000/93/31/bacteria-background-virus-microorganisms-vector-21029331.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.container{
+    margin:auto;
+    width: 50%;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    color: yellow;
+    text-align: center;
+
+}
+label.form-check-label{
+    display: flex;
+    align-items: flex-start;
+}
+/* div.container{
+    background-image: url("https://intermountainhealthcare.org/-/media/coronavirus-covid-19.jpg?mw=800&hash=57A9DE748CEEC50645A0049CB0776C330476E031");
+    border-radius: 5%;
+    color: honeydew;
+    display: flex;
+    
+    margin-top: 50px;
+} */
+div.footer{
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:honeydew;
+    margin-top: 210px;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+
+
+
+
+
+
+/* Style the navbar */
+.topnav {
+    overflow: hidden;
+    background-color: #e9e9e9;
+  }
+  
+  /* Navbar links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Navbar links on mouse-over */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Active/current link */
+  .topnav a.active {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  /* Style the input container */
+  .topnav .login-container {
+    float: right;
+  }
+  
+  /* Style the input field inside the navbar */
+  .topnav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+  }
+  
+  /* Style the button inside the input container */
+  .topnav .login-container button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .topnav .login-container button:hover {
+    background: #ccc;
+  }
+  
+  /* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+  @media screen and (max-width: 600px) {
+    .topnav .login-container {
+      float: none;
+    }
+    .topnav a, .topnav input[type=text], .topnav .login-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+      border: 1px solid #ccc;
+    }
+  }
+
+
+
+
+
+
+
+
+  body{
+    background-color: #f0f0f0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+nav{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    margin-bottom: 7px;
+    position: sticky;
+    top:0;
+    
+
+}
+
+
+nav ul{
+    display: flex;
+    
+    align-items: center;
+    height: 50px;
+    background-color:#5F5F5B;
+    list-style-type: none;
+    color: whitesmoke;
+}
+nav ul li{
+    padding: 0px 12px;
+}
+
+.logo img{
+    height:  55px;
+    padding:0px 5px;
+
+}
+
+.logo {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.25rem;
+    color: whitesmoke;
+    
+}
+.container{
+    min-height: 72vh;
+    background-color: black;
+    color: blanchedalmond;
+    display: flex;
+    margin: 10px auto;
+    border-radius: 12px;
+    padding: 5px 7px;
+    width: 70%;
+    /* justify-content: center; */
+    background-image: url(banner.jpg);
+    background-size: cover;
+
+    
+    
+}
+
+.bottom {
+    position:sticky;
+    background-color:#111010;
+    height:120px;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    flex-direction: column;
+    margin: 7px 0px ;
+}
+
+.icons{
+    margin: 16px 0px;
+    color: whitesmoke;
+    cursor: pointer; ;
+} 
+#progressbar{
+    width: 95vw;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: column;
+     margin-top: 54px;
+
+}
+
+.list-item{
+    display: flex;
+    background-color: #eee5e5; 
+    color: black;
+    margin: 5px 0px;
+    padding: 0px 12px;
+    
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 45px;
+    padding: 1px 1px;
+    width: 100%;
+    
+     /* height: 50px;
+     display: flex;
+     background-color: white;
+     
+     color: black;
+     margin: 12px 0;
+     justify-content: space-between;
+     align-items: center;
+     border-radius: 34px; */
+
+}
+
+.list-item span{
+    font-size: larger;
+    font-weight: bold;
+    /* margin:0px 45px; */
+
+}
+
+.list-item img{
+    max-height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    
+}
+.timestamp{
+    display: flex;
+    align-items: center;
+    font-size: small;
+    cursor: pointer;
+}
+.gifImage{
+opacity: 0;
+transition: opacity 0.4s ease-in ;
+/* color: whitesmoke; */
+margin-right:30px;
+margin-top: 10px;
+
+}
+.playlist{
+    color: whitesmoke;
+    position: absolute;
+left: 5vh;
+display: flex;
+align-items: center;
+
+}
+
+
+
+.songItemPlay{
+    cursor: pointer;
+
+
+}
+
+

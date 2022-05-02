@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHUN-BAJAO NAA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><img src="logo.png" alt="logo pic">Dhun</li>
+            <li>Home
+            <li>About
+
+
+
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <div class="music-list">
+            <h1>BOB-Best Of Best Song Collection </h1>
+            <div class="list-container">
+                <div class="list-item">
+                    <img src="poster.jpg" alt="0">
+                    <span>tera yaar hoon</span>
+                    <span class="timestamp">5:43<span class="play"><i
+                                class="far fa-2x fa-play-circle"></i></span></span>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="poster.jpg" alt="0">
+                    <span>tera yaar hoon</span>
+                    <span class="timestamp">5:43<span class="play"><i
+                                class="far fa-2x fa-play-circle"></i></span></span>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="poster.jpg" alt="0">
+                    <span>tera yaar hoon</span>
+                    <span class="timestamp">5:43<span class="play"><i
+                                class="far fa-2x fa-play-circle"></i></span></span>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="poster.jpg" alt="0">
+                    <span>tera yaar hoon</span>
+                    <span class="timestamp">5:43<span class="play"><i
+                                class="far fa-2x fa-play-circle"></i></span></span>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="poster.jpg" alt="0">
+                    <span>tera yaar hoon</span>
+                    <span class="timestamp">5:43<span class="play"><i
+                                class="far fa-2x fa-play-circle"></i></span></span>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="poster.jpg" alt="0">
+                    <span>tera yaar hoon</span>
+                    <span class="timestamp">5:43<span class="play"><i
+                                class="far fa-2x fa-play-circle"></i></span></span>
+
+
+
+                </div>
+
+                <div class="list-item">
+                    <img src="poster.jpg" alt="0">
+                    <span>tera yaar hoon</span>
+                    <span class="timestamp">5:43<span class="play"><i
+                                class="far fa-2x fa-play-circle"></i></span></span>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="bannner"></div>
+
+
+    </div>
+    <div class="bottom">
+        <input name="range" type="range" id="progressbar" min="0" max="100">
+
+        <div class="icons">
+            <i class="fas fa-2x fa-backward"></i>
+            <i class="far fa-2x fa-play-circle" id=""></i>
+            <i class="fas fa-2x fa-forward"></i>
+        </div>
+        <div class="playlist">
+            <span class="gifImage"><img src="playing.gif" width="60px" height="30px"></span><span style="font-size: large; margin-top: 10px;">tera yaar hoon</span>
+        </div>
+
+
+
+
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/dca0107610.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+login 
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Segoe UI', sans-serif;;
+    font-size: 1rem;
+    line-height: 1.6;
+    height: 100%;
+}
+.wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+}
+.login-form{
+    width: 350px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 2rem;
+    background: #ffffff;
+}
+.form-input{
+    background: #fafafa;
+    border: 1px solid #eeeeee;
+    padding: 12px;
+    width: 100%;
+}
+.form-group{
+    margin-bottom: 1rem;
+}
+.form-button{
+    background: #69d2e7;
+    border: 1px solid #ddd;
+    color: #ffffff;
+    padding: 10px;
+    width: 100%;
+    text-transform: uppercase;
+}
+.form-button:hover{
+    background: #69c8e7;
+}
+.form-header{
+    text-align: center;
+    margin-bottom : 2rem;
+}
+.form-footer{
+    text-align: center;
+}
+
+
+
+
+login
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link  rel="stylesheet" href="css/style.css">
+    <title>Log In</title>
+    
+
+  
+    
+</head>
+<body>
+  {{>navbar}}
+    <div class="wrap">
+        <form class="login-form" action="">
+            <div class="form-header">
+                <h3>Login Form</h3>
+                <p>Login to enter into music world</p>
+            </div>
+            <!--Email Input-->
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="email@example.com">
+            </div>
+            <!--Password Input-->
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="password">
+            </div>
+            <!--Login Button-->
+            <div class="form-group">
+                <button class="form-button" type="submit">Login</button>
+            </div>
+            <div class="form-footer">
+            Don't have an account? <a href="./register">Sign Up</a>
+            </div>
+        </form>
+    </div><!--/.wrap-->
+</body>
+</html>
