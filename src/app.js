@@ -1,5 +1,6 @@
 const express =require("express");
 const { dirname } = require("path");
+const bodyParser = require("body-parser")
 const path=require("path");
 const app=express();
 const hbs=require("hbs");
@@ -14,8 +15,8 @@ const static_path=path.join(__dirname,"../public");
 const template_path=path.join(__dirname,"../templates/views");
 const partials_path=path.join(__dirname,"../templates/partials");
 
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(express.static(static_path))
 app.set("view engine","hbs");
@@ -51,6 +52,7 @@ const cpassword=req.body.confirmpassword;
                 
             })
             const registered=await registerDhun.save();
+            // console.log(registered)
             res.status(201).render("login");
         }
         else{
